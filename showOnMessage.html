@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample Vue</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <form>
+        <span class="error" v-show="!formText">You must enter a message!</span>
+        <textarea v-model="formText"></textarea>
+        <input type="submit" v-show="formText"></input>
+      </form>
+    </div>
+
+    <script src="assets/lib/vue.js"></script>
+
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+
+    <script>
+      var data = {
+        message: 'Hello World!',
+        formText: ''
+      };
+      new Vue({
+        el: '#app',
+        data: data
+      });
+    </script>
+  </body>
+</html>

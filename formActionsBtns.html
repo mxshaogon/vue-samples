@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample Vue</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- <form action="done.html" @submit.prevent="handleIt"> -->
+        <button type="submit" @click="count++">Increment Counter: {{ count }}</button>
+      <!-- </form> -->
+
+      {{ $data | json }}
+    </div>
+
+    <script src="assets/lib/vue.js"></script>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+
+    <script>
+      var data = {
+        count: 0
+      };
+      new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+          updateCount: function() {
+            this.count++;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
